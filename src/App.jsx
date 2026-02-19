@@ -22,6 +22,22 @@ import { CoreServices }        from './pages/core/CoreServices.jsx'
 import { CoreTeam }            from './pages/core/CoreTeam.jsx'
 import { CoreContact }         from './pages/core/CoreContact.jsx'
 
+// Enterprise sample site
+import { EnterpriseSample }         from './pages/EnterpriseSample.jsx'
+import { EnterpriseHome }           from './pages/enterprise/EnterpriseHome.jsx'
+import { EnterpriseAbout }          from './pages/enterprise/EnterpriseAbout.jsx'
+import { EnterpriseSpecialties }    from './pages/enterprise/EnterpriseSpecialties.jsx'
+import { EnterpriseLocations }      from './pages/enterprise/EnterpriseLocations.jsx'
+import { EnterpriseProviders }      from './pages/enterprise/EnterpriseProviders.jsx'
+import { EnterprisePatients }       from './pages/enterprise/EnterprisePatients.jsx'
+import { EnterpriseContact }        from './pages/enterprise/EnterpriseContact.jsx'
+import { Cardiology }               from './pages/enterprise/specialties/Cardiology.jsx'
+import { Orthopedics }              from './pages/enterprise/specialties/Orthopedics.jsx'
+import { Neurology }                from './pages/enterprise/specialties/Neurology.jsx'
+import { WomensHealth }             from './pages/enterprise/specialties/WomensHealth.jsx'
+import { PrimaryCare }              from './pages/enterprise/specialties/PrimaryCare.jsx'
+import { Oncology }                 from './pages/enterprise/specialties/Oncology.jsx'
+
 // Professional sample site
 import { ProfessionalSample }      from './pages/ProfessionalSample.jsx'
 import { ProfessionalHome }        from './pages/professional/ProfessionalHome.jsx'
@@ -80,6 +96,23 @@ export default function App() {
         <Route path="technology"  element={<ProfessionalTechnology />} />
         <Route path="team"        element={<ProfessionalTeam />} />
         <Route path="contact"     element={<ProfessionalContact />} />
+      </Route>
+
+      {/* Enterprise sample site */}
+      <Route path="/enterprise" element={<EnterpriseSample />}>
+        <Route index                      element={<EnterpriseHome />} />
+        <Route path="about"               element={<EnterpriseAbout />} />
+        <Route path="specialties"         element={<EnterpriseSpecialties />} />
+        <Route path="specialties/cardiology"    element={<Cardiology />} />
+        <Route path="specialties/orthopedics"   element={<Orthopedics />} />
+        <Route path="specialties/neurology"     element={<Neurology />} />
+        <Route path="specialties/womens-health" element={<WomensHealth />} />
+        <Route path="specialties/primary-care"  element={<PrimaryCare />} />
+        <Route path="specialties/oncology"      element={<Oncology />} />
+        <Route path="locations"           element={<EnterpriseLocations />} />
+        <Route path="providers"           element={<EnterpriseProviders />} />
+        <Route path="patients"            element={<EnterprisePatients />} />
+        <Route path="contact"             element={<EnterpriseContact />} />
       </Route>
     </Routes>
   )

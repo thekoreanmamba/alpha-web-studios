@@ -62,6 +62,7 @@ export const tiers = [
   {
     id: 'enterprise',
     label: 'Premium',
+    samplePath: '/enterprise',
     labelVariant: 'purple',
     name: 'Enterprise Website',
     description:
