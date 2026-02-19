@@ -97,33 +97,33 @@ function TierCard({ tier }) {
   return (
     <div className={`tier-card ${tier.cardClass} flex flex-col h-full`}>
       {/* Header row */}
-      <div className="flex items-center justify-between mb-7">
+      <div className="flex items-center justify-between mb-4">
         <Badge variant={tier.labelVariant}>{tier.label}</Badge>
         <TimeChip label={tier.timeline} />
       </div>
 
       {/* Name + description */}
       <h3 className="text-[22px] font-black text-white mb-1.5">{tier.name}</h3>
-      <p className="text-slate-400 text-[13px] leading-relaxed mb-7">{tier.description}</p>
+      <p className="text-slate-400 text-[13px] leading-relaxed mb-4">{tier.description}</p>
 
       {/* Price */}
-      <div className="mb-7">
+      <div className="mb-4">
         <div className="text-[10px] text-slate-500 uppercase tracking-widest mb-1.5 font-semibold">
           Investment
         </div>
         <div className="flex items-baseline gap-1.5">
-          <span className={`text-[38px] font-black leading-none ${pClass}`}>
+          <span className={`text-[30px] font-black leading-none ${pClass}`}>
             {tier.priceFrom}
           </span>
-          <span className="text-slate-500 text-lg">– {tier.priceTo}</span>
+          <span className="text-slate-500 text-base">– {tier.priceTo}</span>
         </div>
       </div>
 
       {/* Divider */}
-      <div className="h-px mb-6" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent)' }} />
+      <div className="h-px mb-3" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent)' }} />
 
       {/* Best For */}
-      <div className="mb-6">
+      <div className="mb-4">
         <p className="text-[10px] text-slate-500 uppercase tracking-widest mb-3 font-semibold">
           Best For
         </p>
@@ -138,7 +138,7 @@ function TierCard({ tier }) {
 
       {/* "Everything in X +" inheritance badge */}
       {tier.inherits && (
-        <div className="mb-4 flex items-center gap-2.5 px-3.5 py-2.5 rounded-[10px] bg-white/[0.05] border border-white/[0.09]">
+        <div className="mb-3 flex items-center gap-2.5 px-3.5 py-2 rounded-[10px] bg-white/[0.05] border border-white/[0.09]">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" flex-shrink="0" aria-hidden="true">
             <circle cx="8" cy="8" r="7" fill={iFill} />
             <path d="M5 8l2 2 4-4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -150,9 +150,9 @@ function TierCard({ tier }) {
       )}
 
       {/* Features */}
-      <ul className="mb-6 space-y-1.5">
+      <ul className="mb-4 space-y-1">
         {tier.features.map((feat) => (
-          <li key={feat} className="flex items-start gap-2.5 text-[13.5px] text-slate-300 leading-snug">
+          <li key={feat} className="flex items-start gap-2.5 text-[13px] text-slate-300 leading-snug">
             <span className="mt-[1px] flex-shrink-0">{check}</span>
             {feat}
           </li>
@@ -190,8 +190,8 @@ function TierCard({ tier }) {
 /* ── PricingTiers (exported) ──────────────────────────────────── */
 export function PricingTiers() {
   return (
-    <section id="pricing" className="py-28 bg-section">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="pricing" className="py-14 bg-section">
+      <div className="max-w-screen-2xl mx-auto px-6">
 
         <SectionHeader
           eyebrow="Website Packages"
@@ -199,17 +199,18 @@ export function PricingTiers() {
             <>Choose Your<br /><span className="text-gradient-teal">Level of Impact</span></>
           }
           subtitle="Four packages for every stage of growth — from a polished single-page launch to a full enterprise health system. Every website is custom, conversion-focused, and delivered on WordPress."
+          className="mb-8"
         />
 
         {/* ── 4-column grid — Starter | Core | Professional | Enterprise ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 items-stretch">
           {tiers.map((tier) => (
             <TierCard key={tier.id} tier={tier} />
           ))}
         </div>
 
         {/* Footnote */}
-        <p className="text-center text-slate-500 text-sm mt-10 reveal">
+        <p className="text-center text-slate-500 text-sm mt-6 reveal">
           All packages include WordPress + Elementor builds with mobile-responsive design.{' '}
           <a href="#contact" className="text-teal-400 hover:text-teal-300 transition-colors underline underline-offset-2">
             Schedule a free consultation

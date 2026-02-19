@@ -130,7 +130,7 @@ body {
 ============================================================ */
 @layer components {
   .tier-card {
-    @apply rounded-[22px] p-10 relative overflow-hidden transition-all duration-300;
+    @apply rounded-[22px] p-7 relative overflow-hidden transition-all duration-300;
   }
 
   /* Core — steel blue */
