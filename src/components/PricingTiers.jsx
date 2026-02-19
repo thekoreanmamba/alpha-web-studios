@@ -122,11 +122,27 @@ function TierCard({ tier }) {
         ))}
       </ul>
 
-      {/* CTA */}
+      {/* Primary CTA */}
       <Button href="#contact" variant={btnVariant} fullWidth>
         {tier.cta}
         <ArrowIcon />
       </Button>
+
+      {/* Sample site preview link — only rendered when samplePath exists */}
+      {tier.samplePath && (
+        <a
+          href={tier.samplePath}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 flex items-center justify-center gap-2 w-full py-2.5 rounded-[10px] text-[13px] font-medium text-slate-400 border border-white/[0.08] hover:border-teal-400/30 hover:text-teal-300 transition-all duration-200"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          View Sample Website
+        </a>
+      )}
     </div>
   )
 }

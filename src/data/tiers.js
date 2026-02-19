@@ -7,6 +7,7 @@ export const tiers = [
   {
     id: 'core',
     label: 'Essential',
+    samplePath: '/core',
     labelVariant: 'blue',
     name: 'Core Website',
     description:
