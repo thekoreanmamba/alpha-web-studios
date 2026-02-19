@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #030B18;
+  color: #E2E8F0;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+============================================================ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #030B18; }
+::-webkit-scrollbar-thumb { background: rgba(62, 207, 178, 0.22); border-radius: 4px; }
+
+/* ============================================================
+   GRADIENT TEXT UTILITIES
+============================================================ */
+@layer utilities {
+  .text-gradient-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 55%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #60a5fa 0%, #3ecfb2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #3ecfb2 0%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ============================================================
+   BACKGROUND PATTERNS
+============================================================ */
+@layer utilities {
+  .bg-hero {
+    background:
+      radial-gradient(ellipse 110% 55% at 15%   0%, rgba(37,  99, 235, 0.13) 0%, transparent 55%),
+      radial-gradient(ellipse  70% 45% at 85%  15%, rgba(62, 207, 178, 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse  90% 60% at 50% 110%, rgba(79,  70, 229, 0.09) 0%, transparent 55%),
+      #030B18;
+  }
+  .bg-section {
+    background:
+      radial-gradient(ellipse 55% 40% at   0% 50%, rgba(37,  99, 235, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse 55% 40% at 100% 50%, rgba(62, 207, 178, 0.04) 0%, transparent 50%),
+      #030B18;
+  }
+  .bg-cta {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(37, 99, 235, 0.12) 0%, transparent 65%),
+      rgba(4, 12, 28, 0.9);
+  }
+  .dot-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ============================================================
+   GLASS MORPHISM
+============================================================ */
+@layer utilities {
+  .glass-nav {
+    background: rgba(3, 11, 24, 0.82);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  }
+}
+
+/* ============================================================
+   NAV LINKS — animated underline
+============================================================ */
+@layer components {
+  .nav-link {
+    @apply relative text-sm font-medium text-slate-400 no-underline pb-0.5 transition-colors duration-200 hover:text-slate-100;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-[-2px] left-0 h-[1.5px] w-0 rounded-full transition-all duration-300;
+    background: linear-gradient(90deg, #2563eb, #3ecfb2);
+  }
+  .nav-link:hover::after { width: 100%; }
+}
+
+/* ============================================================
+   PRICING TIER CARDS
+============================================================ */
+@layer components {
+  .tier-card {
+    @apply rounded-[22px] p-10 relative overflow-hidden transition-all duration-300;
+  }
+
+  /* Core — steel blue */
+  .tier-core {
+    background: linear-gradient(160deg, rgba(14,28,68,0.95) 0%, rgba(7,16,42,0.98) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  .tier-core:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 70px rgba(59,130,246,0.14), 0 0 0 1px rgba(59,130,246,0.32);
+  }
+
+  /* Professional — teal, elevated */
+  .tier-professional {
+    background: linear-gradient(160deg, rgba(7,30,55,0.98) 0%, rgba(4,22,46,1) 100%);
+    border: 1px solid rgba(62, 207, 178, 0.38);
+    transform: translateY(-14px) scale(1.025);
+    box-shadow:
+      0 36px 90px rgba(62,207,178,0.13),
+      0  0   80px rgba(62,207,178,0.07),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+    z-index: 10;
+  }
+  .tier-professional:hover {
+    transform: translateY(-20px) scale(1.025);
+    box-shadow: 0 50px 110px rgba(62,207,178,0.2), 0 0 100px rgba(62,207,178,0.1);
+  }
+  /* Animated conic-gradient ring on Professional */
+  .tier-professional::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 23px;
+    background: conic-gradient(from 0deg, #3ecfb2, #2563eb, #7c3aed, #2dd4bf, #3ecfb2);
+    animation: spin-border 6s linear infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.45;
+    z-index: -1;
+  }
+
+  /* Enterprise — deep purple */
+  .tier-enterprise {
+    background: linear-gradient(160deg, rgba(18,10,42,0.97) 0%, rgba(10,6,30,0.99) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.22);
+  }
+  .tier-enterprise:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 70px rgba(139,92,246,0.14), 0 0 0 1px rgba(139,92,246,0.34);
+  }
+}
+
+/* ============================================================
+   MAINTENANCE CARDS
+============================================================ */
+@layer components {
+  .maint-card {
+    @apply rounded-[18px] p-9 relative transition-all duration-300;
+  }
+  .maint-core {
+    background: linear-gradient(160deg, rgba(14,28,68,0.88) 0%, rgba(7,16,42,0.95) 100%);
+    border: 1px solid rgba(59,130,246,0.16);
+  }
+  .maint-core:hover    { transform: translateY(-5px); box-shadow: 0 22px 55px rgba(59,130,246,0.1); }
+  .maint-growth {
+    background: linear-gradient(160deg, rgba(7,30,55,0.95) 0%, rgba(4,22,46,1) 100%);
+    border: 1px solid rgba(62,207,178,0.32);
+    transform: translateY(-10px);
+    box-shadow: 0 28px 65px rgba(62,207,178,0.1), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .maint-growth:hover  { transform: translateY(-15px); box-shadow: 0 38px 85px rgba(62,207,178,0.16); }
+  .maint-full {
+    background: linear-gradient(160deg, rgba(18,10,42,0.92) 0%, rgba(10,6,30,0.98) 100%);
+    border: 1px solid rgba(139,92,246,0.2);
+  }
+  .maint-full:hover    { transform: translateY(-5px); box-shadow: 0 22px 55px rgba(139,92,246,0.1); }
+}
+
+/* ============================================================
+   SHARED CARD VARIANTS
+============================================================ */
+@layer components {
+  .glass-card {
+    @apply rounded-2xl transition-all duration-300;
+    background: rgba(10, 22, 50, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .glass-card:hover {
+    border-color: rgba(62, 207, 178, 0.2);
+    background: rgba(10, 22, 50, 0.8);
+    transform: translateY(-4px);
+  }
+}
+
+/* ============================================================
+   REVEAL ANIMATION
+============================================================ */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+}
+
+/* ============================================================
+   RESPONSIVE: collapse professional elevation on mobile
+============================================================ */
+@media (max-width: 1023px) {
+  .tier-professional {
+    transform: translateY(0) scale(1) !important;
+  }
+  .tier-professional:hover {
+    transform: translateY(-8px) scale(1) !important;
+  }
+  .maint-growth {
+    transform: translateY(0) !important;
+  }
+  .maint-growth:hover {
+    transform: translateY(-5px) !important;
+  }
+}

@@ -1,0 +1,167 @@
+/**
+ * PricingTiers — renders ONLY the 3 primary website packages.
+ *
+ * The Landing Page / Microsite is intentionally excluded here.
+ * It lives in <MicrositeCard /> and is rendered in a separate section
+ * directly above <AddOns />.
+ */
+import { tiers } from '../data/tiers.js'
+import { Badge } from './ui/Badge.jsx'
+import { Button, ArrowIcon } from './ui/Button.jsx'
+import { SectionHeader } from './ui/SectionHeader.jsx'
+
+/* ── colour maps keyed by tier.accentColor ────────────────────── */
+const checkIcon = {
+  blue: (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="7" fill="rgba(59,130,246,0.15)" />
+      <path d="M5 8l2 2 4-4" stroke="#60A5FA" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  teal: (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="7" fill="rgba(62,207,178,0.15)" />
+      <path d="M5 8l2 2 4-4" stroke="#3ECFB2" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  purple: (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="7" fill="rgba(139,92,246,0.15)" />
+      <path d="M5 8l2 2 4-4" stroke="#A78BFA" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+}
+
+const priceClass = {
+  blue:   'text-gradient-blue',
+  teal:   'text-gradient-teal',
+  purple: 'text-gradient-purple',
+}
+
+const pillClass = {
+  blue:   'bg-blue-500/10   text-blue-300',
+  teal:   'bg-teal-400/10   text-teal-300',
+  purple: 'bg-purple-500/10 text-purple-300',
+}
+
+const ctaVariant = {
+  blue:   'blue-soft',
+  teal:   'teal',
+  purple: 'purple-soft',
+}
+
+/* ── TimeChip ─────────────────────────────────────────────────── */
+function TimeChip({ label }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold text-slate-500 bg-white/[0.04] border border-white/[0.08]">
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+        <circle cx="6" cy="6" r="5" stroke="#64748B" strokeWidth="1.2" />
+        <path d="M6 3.5v2.5l1.5 1" stroke="#64748B" strokeWidth="1.2" strokeLinecap="round" />
+      </svg>
+      {label}
+    </span>
+  )
+}
+
+/* ── TierCard ─────────────────────────────────────────────────── */
+function TierCard({ tier }) {
+  const check = checkIcon[tier.accentColor]
+  const pClass = priceClass[tier.accentColor]
+  const pillCls = pillClass[tier.accentColor]
+  const btnVariant = ctaVariant[tier.accentColor]
+
+  return (
+    <div className={`tier-card ${tier.cardClass}`}>
+      {/* Header row */}
+      <div className="flex items-center justify-between mb-7">
+        <Badge variant={tier.labelVariant}>{tier.label}</Badge>
+        <TimeChip label={tier.timeline} />
+      </div>
+
+      {/* Name + description */}
+      <h3 className="text-[22px] font-black text-white mb-1.5">{tier.name}</h3>
+      <p className="text-slate-400 text-[13px] leading-relaxed mb-7">{tier.description}</p>
+
+      {/* Price */}
+      <div className="mb-7">
+        <div className="text-[10px] text-slate-500 uppercase tracking-widest mb-1.5 font-semibold">
+          Investment
+        </div>
+        <div className="flex items-baseline gap-1.5">
+          <span className={`text-[38px] font-black leading-none ${pClass}`}>
+            {tier.priceFrom}
+          </span>
+          <span className="text-slate-500 text-lg">– {tier.priceTo}</span>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="h-px mb-6" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent)' }} />
+
+      {/* Best For */}
+      <div className="mb-6">
+        <p className="text-[10px] text-slate-500 uppercase tracking-widest mb-3 font-semibold">
+          Best For
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {tier.bestFor.map((item) => (
+            <span key={item} className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${pillCls}`}>
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Features */}
+      <ul className="mb-8 space-y-1.5">
+        {tier.features.map((feat) => (
+          <li key={feat} className="flex items-start gap-2.5 text-[13.5px] text-slate-300 leading-snug">
+            <span className="mt-[1px] flex-shrink-0">{check}</span>
+            {feat}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA */}
+      <Button href="#contact" variant={btnVariant} fullWidth>
+        {tier.cta}
+        <ArrowIcon />
+      </Button>
+    </div>
+  )
+}
+
+/* ── PricingTiers (exported) ──────────────────────────────────── */
+export function PricingTiers() {
+  return (
+    <section id="pricing" className="py-28 bg-section">
+      <div className="max-w-7xl mx-auto px-6">
+
+        <SectionHeader
+          eyebrow="Website Packages"
+          headline={
+            <>Choose Your<br /><span className="text-gradient-teal">Level of Impact</span></>
+          }
+          subtitle="Three tiers built for different stages of growth. Every website is custom, conversion-focused, and delivered on WordPress."
+        />
+
+        {/* ── 3-column grid — Core | Professional | Enterprise ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          {tiers.map((tier) => (
+            <TierCard key={tier.id} tier={tier} />
+          ))}
+        </div>
+
+        {/* Footnote */}
+        <p className="text-center text-slate-500 text-sm mt-10 reveal">
+          All packages include WordPress + Elementor builds with mobile-responsive design.{' '}
+          <a href="#contact" className="text-teal-400 hover:text-teal-300 transition-colors underline underline-offset-2">
+            Schedule a free consultation
+          </a>{' '}
+          to find the right fit.
+        </p>
+
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,62 @@
+export const maintenancePlans = [
+  {
+    id: 'core-care',
+    label: 'Core Care',
+    labelVariant: 'blue',
+    price: '$299',
+    period: '/month',
+    description:
+      'Solid protection for businesses that want dependable upkeep without the overhead.',
+    features: [
+      'Monthly WordPress updates',
+      'Monthly backups',
+      'Security monitoring',
+      'Uptime tracking',
+      '30 min of content edits / month',
+    ],
+    cta: 'Get Core Care',
+    cardClass: 'maint-core',
+    accentColor: 'blue',
+    priceClass: 'text-gradient-blue',
+  },
+  {
+    id: 'growth-care',
+    label: '★ Recommended',
+    labelVariant: 'popular',
+    price: '$599',
+    period: '/month',
+    description:
+      'For growing practices that want faster response times and active performance improvement.',
+    features: [
+      'Everything in Core Care',
+      'Bi-weekly WordPress updates',
+      'Faster response time',
+      '2 hours of content edits / month',
+      'Performance optimization',
+    ],
+    cta: 'Get Growth Care',
+    cardClass: 'maint-growth',
+    accentColor: 'teal',
+    priceClass: 'text-gradient-teal',
+  },
+  {
+    id: 'full-support',
+    label: 'Full Support',
+    labelVariant: 'purple',
+    price: '$1,000',
+    period: '+/month',
+    description:
+      'White-glove support for practices that demand priority access, weekly oversight, and ongoing improvement.',
+    features: [
+      'Everything in Growth Care',
+      'Weekly WordPress updates',
+      'Priority support access',
+      '4 hours of content edits / month',
+      'Ongoing improvements & optimization',
+    ],
+    cta: 'Get Full Support',
+    cardClass: 'maint-full',
+    accentColor: 'purple',
+    priceClass: 'text-gradient-purple',
+  },
+]
