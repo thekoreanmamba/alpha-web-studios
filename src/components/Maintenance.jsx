@@ -29,7 +29,7 @@ const delayClass = ['reveal-d1', '', 'reveal-d2']
 
 function PlanCard({ plan, delayIdx }) {
   return (
-    <div className={`maint-card ${plan.cardClass} reveal ${delayClass[delayIdx]}`}>
+    <div className={`maint-card ${plan.cardClass} reveal ${delayClass[delayIdx]} flex flex-col h-full`}>
       <Badge variant={plan.labelVariant} className="mb-4">
         {plan.label}
       </Badge>
@@ -54,6 +54,8 @@ function PlanCard({ plan, delayIdx }) {
         ))}
       </ul>
 
+      <div className="flex-1" />
+
       <Button href="#contact" variant={ctaVariant[plan.accentColor]} fullWidth>
         {plan.cta}
         <ArrowIcon />
@@ -73,7 +75,7 @@ export function Maintenance() {
           subtitle="Your website is a living asset. Our maintenance plans keep it performing — and your mind at ease."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {maintenancePlans.map((plan, i) => (
             <PlanCard key={plan.id} plan={plan} delayIdx={i} />
           ))}
