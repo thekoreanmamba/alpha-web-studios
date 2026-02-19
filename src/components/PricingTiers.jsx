@@ -95,7 +95,7 @@ function TierCard({ tier }) {
   const iAccent   = inheritsAccent[tier.accentColor]
 
   return (
-    <div className={`tier-card ${tier.cardClass}`}>
+    <div className={`tier-card ${tier.cardClass} flex flex-col h-full`}>
       {/* Header row */}
       <div className="flex items-center justify-between mb-7">
         <Badge variant={tier.labelVariant}>{tier.label}</Badge>
@@ -150,7 +150,7 @@ function TierCard({ tier }) {
       )}
 
       {/* Features */}
-      <ul className="mb-8 space-y-1.5">
+      <ul className="mb-6 space-y-1.5">
         {tier.features.map((feat) => (
           <li key={feat} className="flex items-start gap-2.5 text-[13.5px] text-slate-300 leading-snug">
             <span className="mt-[1px] flex-shrink-0">{check}</span>
@@ -158,6 +158,9 @@ function TierCard({ tier }) {
           </li>
         ))}
       </ul>
+
+      {/* Spacer — fills remaining height so CTA always sits at the bottom */}
+      <div className="flex-1" />
 
       {/* Primary CTA */}
       <Button href="#contact" variant={btnVariant} fullWidth>
@@ -199,7 +202,7 @@ export function PricingTiers() {
         />
 
         {/* ── 4-column grid — Starter | Core | Professional | Enterprise ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
           {tiers.map((tier) => (
             <TierCard key={tier.id} tier={tier} />
           ))}
