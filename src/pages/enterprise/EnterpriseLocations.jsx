@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { SamplePageBanner } from '../../components/sample-site/SamplePageBanner.jsx'
 import { SampleSection }    from '../../components/sample-site/SampleSection.jsx'
 import { SampleCTA }        from '../../components/sample-site/SampleCTA.jsx'
@@ -68,7 +69,7 @@ export function EnterpriseLocations() {
                 </div>
 
                 {/* Services at this location */}
-                <div>
+                <div className="mb-5">
                   <p className="text-[11px] font-bold tracking-wider uppercase text-slate-400 mb-3">Available Specialties</p>
                   <div className="flex flex-wrap gap-2">
                     {loc.services.map((s) => (
@@ -76,6 +77,14 @@ export function EnterpriseLocations() {
                     ))}
                   </div>
                 </div>
+
+                <Link
+                  to={`/enterprise/locations/${loc.slug}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-purple-600 text-white font-semibold text-[13px] hover:bg-purple-700 transition-colors"
+                >
+                  View Location Details
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3.5l4 3.5-4 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </Link>
               </div>
             </div>
           ))}

@@ -39,6 +39,12 @@ const variantClasses = {
     hover:bg-teal-400/22 hover:border-teal-400/50 hover:text-white
     hover:-translate-y-px
   `,
+  'green-soft': `
+    bg-green-500/10 text-green-300
+    border border-green-500/28
+    hover:bg-green-500/22 hover:border-green-500/50 hover:text-white
+    hover:-translate-y-px
+  `,
 }
 
 export function Button({

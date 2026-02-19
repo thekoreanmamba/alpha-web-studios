@@ -30,6 +30,7 @@ export const NAV_LINKS = [
 export const LOCATIONS = [
   {
     id:       'dallas',
+    slug:     'dallas',
     name:     'Dallas Main Campus',
     tag:      'Flagship · All Specialties',
     street:   '2500 N. Pearl St, Suite 1000',
@@ -48,6 +49,7 @@ export const LOCATIONS = [
   },
   {
     id:       'plano',
+    slug:     'plano',
     name:     'Plano Medical Center',
     tag:      'Primary Care · Orthopedics · Women\'s Health',
     street:   '6100 Legacy Drive, Suite 200',
@@ -66,6 +68,7 @@ export const LOCATIONS = [
   },
   {
     id:       'fortworth',
+    slug:     'fort-worth',
     name:     'Fort Worth Clinic',
     tag:      'Primary Care · Cardiology · Neurology',
     street:   '900 W. Magnolia Ave, Suite 150',

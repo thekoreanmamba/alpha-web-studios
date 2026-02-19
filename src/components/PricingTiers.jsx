@@ -12,6 +12,12 @@ import { SectionHeader } from './ui/SectionHeader.jsx'
 
 /* ── colour maps keyed by tier.accentColor ────────────────────── */
 const checkIcon = {
+  green: (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="8" cy="8" r="7" fill="rgba(34,197,94,0.15)" />
+      <path d="M5 8l2 2 4-4" stroke="#4ADE80" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
   blue: (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
       <circle cx="8" cy="8" r="7" fill="rgba(59,130,246,0.15)" />
@@ -33,18 +39,21 @@ const checkIcon = {
 }
 
 const priceClass = {
+  green:  'text-gradient-green',
   blue:   'text-gradient-blue',
   teal:   'text-gradient-teal',
   purple: 'text-gradient-purple',
 }
 
 const pillClass = {
+  green:  'bg-green-500/10  text-green-300',
   blue:   'bg-blue-500/10   text-blue-300',
   teal:   'bg-teal-400/10   text-teal-300',
   purple: 'bg-purple-500/10 text-purple-300',
 }
 
 const ctaVariant = {
+  green:  'green-soft',
   blue:   'blue-soft',
   teal:   'teal',
   purple: 'purple-soft',
@@ -158,11 +167,11 @@ export function PricingTiers() {
           headline={
             <>Choose Your<br /><span className="text-gradient-teal">Level of Impact</span></>
           }
-          subtitle="Three tiers built for different stages of growth. Every website is custom, conversion-focused, and delivered on WordPress."
+          subtitle="Four packages for every stage of growth — from a polished single-page launch to a full enterprise health system. Every website is custom, conversion-focused, and delivered on WordPress."
         />
 
-        {/* ── 3-column grid — Core | Professional | Enterprise ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        {/* ── 4-column grid — Starter | Core | Professional | Enterprise ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
           {tiers.map((tier) => (
             <TierCard key={tier.id} tier={tier} />
           ))}

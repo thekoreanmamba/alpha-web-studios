@@ -96,8 +96,13 @@ export function EnterpriseFooter({
           <div className="flex flex-col gap-5">
             {locations.map((loc) => (
               <div key={loc.id}>
-                <p className="text-white text-[13px] font-semibold mb-0.5">{loc.name}</p>
-                <p className="text-slate-500 text-[12px] leading-snug">
+                <Link
+                  to={`/enterprise/locations/${loc.slug}`}
+                  className="text-white text-[13px] font-semibold mb-0.5 hover:text-purple-300 transition-colors"
+                >
+                  {loc.name}
+                </Link>
+                <p className="text-slate-500 text-[12px] leading-snug mt-0.5">
                   {loc.city}, {loc.state} · {loc.phone}
                 </p>
               </div>

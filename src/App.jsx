@@ -14,6 +14,10 @@ import { Footer }        from './components/Footer.jsx'
 import { LineDivider }   from './components/ui/LineDivider.jsx'
 import { useScrollReveal } from './hooks/useScrollReveal.js'
 
+// Basic (Starter) sample site
+import { BasicSample }         from './pages/BasicSample.jsx'
+import { BasicHome }           from './pages/basic/BasicHome.jsx'
+
 // Core sample site
 import { CoreSample }          from './pages/CoreSample.jsx'
 import { CoreHome }            from './pages/core/CoreHome.jsx'
@@ -21,6 +25,11 @@ import { CoreAbout }           from './pages/core/CoreAbout.jsx'
 import { CoreServices }        from './pages/core/CoreServices.jsx'
 import { CoreTeam }            from './pages/core/CoreTeam.jsx'
 import { CoreContact }         from './pages/core/CoreContact.jsx'
+
+// Enterprise location sub-pages
+import { Dallas }                   from './pages/enterprise/locations/Dallas.jsx'
+import { Plano }                    from './pages/enterprise/locations/Plano.jsx'
+import { FortWorth }                from './pages/enterprise/locations/FortWorth.jsx'
 
 // Enterprise sample site
 import { EnterpriseSample }         from './pages/EnterpriseSample.jsx'
@@ -79,6 +88,11 @@ export default function App() {
     <Routes>
       <Route path="/" element={<MarketingPage />} />
 
+      {/* Basic (Starter) sample site */}
+      <Route path="/basic" element={<BasicSample />}>
+        <Route index element={<BasicHome />} />
+      </Route>
+
       {/* Core sample site */}
       <Route path="/core" element={<CoreSample />}>
         <Route index           element={<CoreHome />} />
@@ -109,7 +123,10 @@ export default function App() {
         <Route path="specialties/womens-health" element={<WomensHealth />} />
         <Route path="specialties/primary-care"  element={<PrimaryCare />} />
         <Route path="specialties/oncology"      element={<Oncology />} />
-        <Route path="locations"           element={<EnterpriseLocations />} />
+        <Route path="locations"               element={<EnterpriseLocations />} />
+        <Route path="locations/dallas"        element={<Dallas />} />
+        <Route path="locations/plano"         element={<Plano />} />
+        <Route path="locations/fort-worth"    element={<FortWorth />} />
         <Route path="providers"           element={<EnterpriseProviders />} />
         <Route path="patients"            element={<EnterprisePatients />} />
         <Route path="contact"             element={<EnterpriseContact />} />

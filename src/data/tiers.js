@@ -5,6 +5,31 @@
  */
 export const tiers = [
   {
+    id: 'basic',
+    label: 'Starter',
+    samplePath: '/basic',
+    labelVariant: 'green',
+    name: 'Starter Website',
+    description:
+      'A polished single-page website — the fastest way to get a professional online presence without a large investment.',
+    priceFrom: '$1,200',
+    priceTo: '$2,000',
+    timeline: '1–2 Weeks',
+    bestFor: ['Solo Practitioners', 'New Startups', 'Side Practices', 'Quick Launch'],
+    bestForVariant: 'green',
+    features: [
+      'Single-page scrolling design',
+      '4–6 custom sections',
+      'Contact form',
+      'Mobile-responsive layout',
+      'Basic on-page SEO',
+      'Hosting setup & launch support',
+    ],
+    cta: 'Start With Starter',
+    cardClass: 'tier-basic',
+    accentColor: 'green',
+  },
+  {
     id: 'core',
     label: 'Essential',
     samplePath: '/core',
