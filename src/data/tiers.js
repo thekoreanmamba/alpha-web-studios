@@ -15,8 +15,8 @@ export const tiers = [
     name: 'Starter Website',
     description:
       'A polished single-page website — the fastest way to get a professional online presence without a large investment.',
-    priceFrom: '$1,200',
-    priceTo: '$2,000',
+    priceFrom: '$1,500',
+    priceTo: '$2,500',
     timeline: '1–2 Weeks',
     bestFor: ['Solo Practitioners', 'New Startups', 'Side Practices', 'Quick Launch'],
     bestForVariant: 'green',
