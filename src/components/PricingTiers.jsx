@@ -59,6 +59,19 @@ const ctaVariant = {
   purple: 'purple-soft',
 }
 
+/* accent color used inside the inherits badge checkmark circle */
+const inheritsFill = {
+  blue:   'rgba(59,130,246,0.55)',
+  teal:   'rgba(62,207,178,0.55)',
+  purple: 'rgba(139,92,246,0.55)',
+}
+
+const inheritsAccent = {
+  blue:   'text-blue-400',
+  teal:   'text-teal-400',
+  purple: 'text-purple-400',
+}
+
 /* ── TimeChip ─────────────────────────────────────────────────── */
 function TimeChip({ label }) {
   return (
@@ -74,10 +87,12 @@ function TimeChip({ label }) {
 
 /* ── TierCard ─────────────────────────────────────────────────── */
 function TierCard({ tier }) {
-  const check = checkIcon[tier.accentColor]
-  const pClass = priceClass[tier.accentColor]
-  const pillCls = pillClass[tier.accentColor]
+  const check     = checkIcon[tier.accentColor]
+  const pClass    = priceClass[tier.accentColor]
+  const pillCls   = pillClass[tier.accentColor]
   const btnVariant = ctaVariant[tier.accentColor]
+  const iFill     = inheritsFill[tier.accentColor]
+  const iAccent   = inheritsAccent[tier.accentColor]
 
   return (
     <div className={`tier-card ${tier.cardClass}`}>
@@ -120,6 +135,19 @@ function TierCard({ tier }) {
           ))}
         </div>
       </div>
+
+      {/* "Everything in X +" inheritance badge */}
+      {tier.inherits && (
+        <div className="mb-4 flex items-center gap-2.5 px-3.5 py-2.5 rounded-[10px] bg-white/[0.05] border border-white/[0.09]">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" flex-shrink="0" aria-hidden="true">
+            <circle cx="8" cy="8" r="7" fill={iFill} />
+            <path d="M5 8l2 2 4-4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <span className="text-[12px] font-semibold text-slate-300 leading-tight">
+            Everything in <span className={iAccent}>{tier.inherits}</span>, plus:
+          </span>
+        </div>
+      )}
 
       {/* Features */}
       <ul className="mb-8 space-y-1.5">

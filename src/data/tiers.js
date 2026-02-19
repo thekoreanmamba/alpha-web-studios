@@ -1,7 +1,10 @@
 /**
- * The 3 primary website packages.
+ * The 4 primary website packages.
  * The Landing Page / Microsite is NOT in this array —
  * it lives in its own MicrositeCard component.
+ *
+ * `inherits` — when set, TierCard shows an "Everything in X +" badge
+ * and the features list represents only what's NEW at this tier.
  */
 export const tiers = [
   {
@@ -20,10 +23,9 @@ export const tiers = [
     features: [
       'Single-page scrolling design',
       '4–6 custom sections',
-      'Contact form',
+      'Contact info, hours & location display',
       'Mobile-responsive layout',
-      'Basic on-page SEO',
-      'Hosting setup & launch support',
+      'Basic on-page SEO & go-live support',
     ],
     cta: 'Start With Starter',
     cardClass: 'tier-basic',
@@ -34,6 +36,7 @@ export const tiers = [
     label: 'Essential',
     samplePath: '/core',
     labelVariant: 'blue',
+    inherits: 'Starter',
     name: 'Core Website',
     description:
       'Everything you need to establish a clean, professional online presence and start attracting clients.',
@@ -44,10 +47,10 @@ export const tiers = [
     bestForVariant: 'blue',
     features: [
       '3–5 pages (Home, About, Services, Team, Contact)',
-      'Mobile-responsive design',
-      'Basic SEO setup',
-      'Contact form + Google Maps',
+      'Contact form + Google Maps integration',
       'Professional theme customization',
+      'Google Analytics & Search Console setup',
+      'Local business schema markup',
     ],
     cta: 'Start With Core',
     cardClass: 'tier-core',
@@ -58,6 +61,7 @@ export const tiers = [
     label: '★ Most Popular',
     samplePath: '/professional',
     labelVariant: 'popular',
+    inherits: 'Core',
     name: 'Professional Website',
     description:
       'Custom design with advanced features for established practices ready to grow their digital presence.',
@@ -72,12 +76,11 @@ export const tiers = [
     ],
     bestForVariant: 'teal',
     features: [
-      '6–10 pages with custom layouts',
-      'Detailed service / treatment pages',
+      '6–10 pages, fully custom design',
+      'Detailed service & treatment pages',
       'Provider profiles & team bios',
       'Blog / resources section setup',
-      'Advanced SEO optimization',
-      'Fully custom design — not template-based',
+      'Advanced SEO strategy & optimization',
       'Image galleries or before/after sections',
     ],
     cta: 'Start With Professional',
@@ -89,6 +92,7 @@ export const tiers = [
     label: 'Premium',
     samplePath: '/enterprise',
     labelVariant: 'purple',
+    inherits: 'Professional',
     name: 'Enterprise Website',
     description:
       'Full-scale, fully custom solutions for large organizations, specialty centers, and multi-location practices.',
@@ -103,7 +107,6 @@ export const tiers = [
     ],
     bestForVariant: 'purple',
     features: [
-      '10+ pages, fully custom design',
       'Online booking / scheduling integration',
       'Advanced forms & patient portal links',
       'Multi-location support',
