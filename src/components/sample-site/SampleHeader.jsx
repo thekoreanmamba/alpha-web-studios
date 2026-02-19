@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 /**
  * SampleHeader — clinic navigation bar.
@@ -6,46 +7,54 @@ import { useState } from 'react'
  *
  * Props:
  *   clinicName   — display name for the logo text
+ *   homeHref     — href for the logo link (default '/')
  *   navLinks     — array of { label, href }
  *   phone        — clinic phone string
  *   ctaLabel     — CTA button text
- *   ctaHref      — CTA button href
- *   accentColor  — Tailwind color name for the logo accent dot (default 'blue')
+ *   ctaHref      — CTA button href (route or anchor)
  */
 export function SampleHeader({
   clinicName,
+  homeHref = '/',
   navLinks = [],
   phone,
   ctaLabel = 'Book Appointment',
-  ctaHref = '#contact',
-  accentColor = 'blue',
+  ctaHref = '/contact',
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  const isActive = (href) =>
+    pathname === href || (href !== homeHref && pathname.startsWith(href))
 
   return (
     <header className="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 flex-shrink-0">
+        <Link to={homeHref} className="flex items-center gap-2.5 flex-shrink-0">
           <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
           </div>
           <span className="font-bold text-slate-900 text-[15px] leading-tight">{clinicName}</span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7" aria-label="Main navigation">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-[14px] font-medium text-slate-500 hover:text-slate-900 transition-colors duration-150"
+              to={link.href}
+              className={`text-[14px] font-medium transition-colors duration-150 ${
+                isActive(link.href)
+                  ? 'text-blue-600 font-semibold'
+                  : 'text-slate-500 hover:text-slate-900'
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -59,12 +68,12 @@ export function SampleHeader({
               {phone}
             </a>
           )}
-          <a
-            href={ctaHref}
+          <Link
+            to={ctaHref}
             className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white text-[14px] font-semibold hover:bg-blue-700 transition-colors shadow-sm"
           >
             {ctaLabel}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -90,27 +99,29 @@ export function SampleHeader({
       {menuOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[15px] font-medium text-slate-600 hover:text-slate-900"
+              className={`text-[15px] font-medium ${
+                isActive(link.href) ? 'text-blue-600 font-semibold' : 'text-slate-600 hover:text-slate-900'
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           {phone && (
             <a href={`tel:${phone.replace(/\D/g, '')}`} className="text-[15px] font-medium text-slate-600">
               {phone}
             </a>
           )}
-          <a
-            href={ctaHref}
+          <Link
+            to={ctaHref}
             onClick={() => setMenuOpen(false)}
             className="inline-flex justify-center items-center px-4 py-2.5 rounded-lg bg-blue-600 text-white text-[14px] font-semibold"
           >
             {ctaLabel}
-          </a>
+          </Link>
         </div>
       )}
     </header>
