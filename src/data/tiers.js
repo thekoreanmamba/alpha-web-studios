@@ -31,6 +31,7 @@ export const tiers = [
   {
     id: 'professional',
     label: '★ Most Popular',
+    samplePath: '/professional',
     labelVariant: 'popular',
     name: 'Professional Website',
     description:

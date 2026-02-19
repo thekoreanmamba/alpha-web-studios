@@ -13,7 +13,8 @@ import { CTA }           from './components/CTA.jsx'
 import { Footer }        from './components/Footer.jsx'
 import { LineDivider }   from './components/ui/LineDivider.jsx'
 import { useScrollReveal } from './hooks/useScrollReveal.js'
-import { CoreSample }    from './pages/CoreSample.jsx'
+import { CoreSample }         from './pages/CoreSample.jsx'
+import { ProfessionalSample } from './pages/ProfessionalSample.jsx'
 
 function MarketingPage() {
   useScrollReveal()
@@ -46,7 +47,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/"     element={<MarketingPage />} />
-      <Route path="/core" element={<CoreSample />} />
+      <Route path="/core"         element={<CoreSample />} />
+      <Route path="/professional" element={<ProfessionalSample />} />
     </Routes>
   )
 }
