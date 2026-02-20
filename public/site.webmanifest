@@ -1,0 +1,21 @@
+{
+  "name": "Alpha Web Studios",
+  "short_name": "Alpha AWS",
+  "description": "Custom WordPress websites for medical clinics, law firms, and service businesses in Los Angeles and Orange County.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#030B18",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x800",
+      "type": "image/png"
+    }
+  ]
+}

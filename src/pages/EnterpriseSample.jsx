@@ -4,8 +4,10 @@ import { EnterpriseHeader }  from '../components/sample-site/EnterpriseHeader.js
 import { EnterpriseFooter }  from '../components/sample-site/EnterpriseFooter.jsx'
 import { ScrollToTop }       from '../components/sample-site/ScrollToTop.jsx'
 import { CLINIC, NAV_LINKS, DEPARTMENTS, LOCATIONS } from '../data/enterprise-site.js'
+import { useNoIndex }        from '../hooks/useNoIndex.js'
 
 export function EnterpriseSample() {
+  useNoIndex()
   return (
     <SampleLayout tier="Enterprise">
       <ScrollToTop />

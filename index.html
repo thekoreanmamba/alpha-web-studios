@@ -3,10 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional WordPress websites for medical practices, law firms, and service businesses in Los Angeles and Orange County. English & Korean support." />
-    <title>Alpha Web Studios — Professional WordPress Websites | LA & OC</title>
+
+    <!-- ═══════════════════════════════════════════════════
+         PRIMARY META
+    ═══════════════════════════════════════════════════ -->
+    <title>Alpha Web Studios — WordPress Web Design for Medical Clinics & Businesses | Los Angeles & Orange County</title>
+    <meta name="description" content="Custom WordPress websites for medical clinics, dental offices, med spas, law firms, and service businesses in Los Angeles and Orange County. EN/KR bilingual support. 2–8 week delivery. Free consultation." />
+    <meta name="keywords" content="WordPress web design Los Angeles, medical website design Orange County, dental website design LA, med spa website designer, urgent care website, law firm website Los Angeles, Korean web designer LA, Elementor developer Los Angeles, healthcare website design, WordPress developer Orange County" />
+    <link rel="canonical" href="https://alphawebstudios.xyz/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Alpha Web Studios" />
+
+    <!-- ═══════════════════════════════════════════════════
+         OPEN GRAPH (iMessage, Discord, Facebook, LinkedIn)
+    ═══════════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alphawebstudios.xyz/" />
+    <meta property="og:site_name" content="Alpha Web Studios" />
+    <meta property="og:title" content="Alpha Web Studios — WordPress Web Design for LA & Orange County" />
+    <meta property="og:description" content="Custom WordPress websites for medical clinics, law firms, and service businesses in Los Angeles and Orange County. EN/KR bilingual support. Free consultation." />
+    <meta property="og:image" content="https://alphawebstudios.xyz/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Alpha Web Studios — Professional WordPress Websites for Los Angeles and Orange County" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ═══════════════════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alpha Web Studios — WordPress Web Design for LA & Orange County" />
+    <meta name="twitter:description" content="Custom WordPress websites for medical clinics, law firms, and service businesses in Los Angeles and Orange County. EN/KR bilingual support." />
+    <meta name="twitter:image" content="https://alphawebstudios.xyz/og-image.png" />
+    <meta name="twitter:image:alt" content="Alpha Web Studios — Professional WordPress Websites for LA & OC" />
+
+    <!-- ═══════════════════════════════════════════════════
+         FAVICON & ICONS
+    ═══════════════════════════════════════════════════ -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#2563EB" />
+
+    <!-- ═══════════════════════════════════════════════════
+         FONTS
+    ═══════════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- ═══════════════════════════════════════════════════
+         JSON-LD STRUCTURED DATA
+         ProfessionalService + WebSite
+    ═══════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://alphawebstudios.xyz/#business",
+          "name": "Alpha Web Studios",
+          "url": "https://alphawebstudios.xyz",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://alphawebstudios.xyz/og-image.png",
+            "width": 1200,
+            "height": 800
+          },
+          "image": "https://alphawebstudios.xyz/og-image.png",
+          "description": "Custom WordPress websites for medical clinics, dental offices, med spas, urgent care centers, law firms, and service businesses in Los Angeles and Orange County. English and Korean bilingual support.",
+          "telephone": "TODO: +1-XXX-XXX-XXXX",
+          "email": "TODO: hello@alphawebstudios.xyz",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Los Angeles",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.0522",
+            "longitude": "-118.2437"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Los Angeles",
+              "sameAs": "https://www.wikidata.org/wiki/Q65"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Orange County, California",
+              "sameAs": "https://www.wikidata.org/wiki/Q107643"
+            },
+            {
+              "@type": "State",
+              "name": "California",
+              "sameAs": "https://www.wikidata.org/wiki/Q99"
+            }
+          ],
+          "knowsLanguage": ["en", "ko"],
+          "priceRange": "$$–$$$",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "WordPress Web Design Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Starter Website",
+                  "description": "Single-page WordPress website for solo practitioners and new businesses. $1,500–$2,500. Delivered in 1–2 weeks."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Core Website",
+                  "description": "Multi-page professional WordPress website for growing practices. $3,500–$4,500. Delivered in 2–3 weeks."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Professional Website",
+                  "description": "Fully custom WordPress website for established medical practices and businesses. $5,000–$8,000. Delivered in 3–5 weeks."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Enterprise Website",
+                  "description": "Full-scale WordPress solution for large organizations and multi-location practices. $8,500–$15,000+. Delivered in 5–8 weeks."
+                }
+              }
+            ]
+          },
+          "sameAs": [
+            "TODO: https://www.instagram.com/alphawebstudios",
+            "TODO: https://www.linkedin.com/company/alphawebstudios"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://alphawebstudios.xyz/#website",
+          "url": "https://alphawebstudios.xyz",
+          "name": "Alpha Web Studios",
+          "publisher": {
+            "@id": "https://alphawebstudios.xyz/#business"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sample/demo tier sites — not real content pages, excluded from index
+Disallow: /basic
+Disallow: /basic/
+Disallow: /core
+Disallow: /core/
+Disallow: /professional
+Disallow: /professional/
+Disallow: /enterprise
+Disallow: /enterprise/
+
+Sitemap: https://alphawebstudios.xyz/sitemap.xml

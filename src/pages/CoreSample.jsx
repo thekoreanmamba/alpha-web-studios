@@ -4,8 +4,10 @@ import { SampleHeader }  from '../components/sample-site/SampleHeader.jsx'
 import { SampleFooter }  from '../components/sample-site/SampleFooter.jsx'
 import { ScrollToTop }   from '../components/sample-site/ScrollToTop.jsx'
 import { CLINIC, NAV_LINKS, HOURS } from '../data/core-site.js'
+import { useNoIndex }    from '../hooks/useNoIndex.js'
 
 export function CoreSample() {
+  useNoIndex()
   return (
     <SampleLayout tier="Core">
       <ScrollToTop />
