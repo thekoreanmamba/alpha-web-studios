@@ -1,10 +1,34 @@
 import { Button, ArrowIcon } from './ui/Button.jsx'
 
 const STATS = [
-  { value: '3',    label: 'Website Tiers',   colorClass: 'text-gradient-blue' },
-  { value: '2–8',  label: 'Week Delivery',   colorClass: 'text-gradient-teal' },
-  { value: 'EN/KR',label: 'Bilingual Support',colorClass: 'text-white' },
-  { value: 'LA',   label: '& Orange County', colorClass: 'text-gradient-purple' },
+  { value: '3',    label: 'Website Tiers',    colorClass: 'text-gradient-blue' },
+  { value: '2–8',  label: 'Week Delivery',    colorClass: 'text-gradient-teal' },
+  { value: 'EN/KR',label: 'Bilingual Support', colorClass: 'text-white' },
+  { value: 'LA',   label: '& Orange County',  colorClass: 'text-gradient-purple' },
+]
+
+/**
+ * Per-cell border classes for the 2-col mobile / 4-col desktop grid.
+ *
+ * Mobile (grid-cols-2):
+ *   [0] [1]   ← index 0 gets border-r → perfect center divider
+ *   [2] [3]   ← index 2 gets border-r (same column) + border-t for row separator
+ *              ← index 3 gets border-t for row separator
+ *
+ * Desktop (sm:grid-cols-4):
+ *   [0] [1] [2] [3]   ← indices 0,1,2 get border-r; border-t removed
+ *
+ * border-white/[0.08] sets the color for whichever border-{side} widths are active.
+ */
+const STAT_BORDER_CLASSES = [
+  // index 0 — left col, top row
+  'border-r border-white/[0.08]',
+  // index 1 — right col, top row: no border on mobile, border-r on sm+
+  'sm:border-r sm:border-white/[0.08]',
+  // index 2 — left col, bottom row: border-r always + border-t on mobile only
+  'border-r border-t border-white/[0.08] sm:border-t-0',
+  // index 3 — right col, bottom row: border-t on mobile only, no border on sm
+  'border-t border-white/[0.08] sm:border-t-0',
 ]
 
 export function Hero() {
@@ -53,21 +77,19 @@ export function Hero() {
           </div>
 
           {/* Stats bar */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-6 md:gap-10 px-8 py-5 rounded-2xl border border-white/[0.06] bg-white/[0.025]">
+          <div className="grid grid-cols-2 sm:inline-grid sm:grid-cols-4 w-full sm:w-auto rounded-2xl border border-white/[0.06] bg-white/[0.025] overflow-hidden">
             {STATS.map((stat, i) => (
-              <>
-                {i > 0 && (
-                  <div key={`div-${i}`} className="w-px h-8 bg-white/[0.08]" aria-hidden="true" />
-                )}
-                <div key={stat.label} className="text-center">
-                  <div className={`text-3xl md:text-4xl font-black leading-none mb-1 ${stat.colorClass}`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">
-                    {stat.label}
-                  </div>
+              <div
+                key={stat.label}
+                className={`text-center px-6 sm:px-10 py-5 ${STAT_BORDER_CLASSES[i]}`}
+              >
+                <div className={`text-3xl md:text-4xl font-black leading-none mb-1 ${stat.colorClass}`}>
+                  {stat.value}
                 </div>
-              </>
+                <div className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">
+                  {stat.label}
+                </div>
+              </div>
             ))}
           </div>
 
