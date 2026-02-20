@@ -9,6 +9,7 @@ import { Maintenance }   from './components/Maintenance.jsx'
 import { MicrositeCard } from './components/MicrositeCard.jsx'
 import { AddOns }        from './components/AddOns.jsx'
 import { WhyAlpha }      from './components/WhyAlpha.jsx'
+import { Testimonials }  from './components/Testimonials.jsx'
 import { CTA }           from './components/CTA.jsx'
 import { Footer }        from './components/Footer.jsx'
 import { LineDivider }   from './components/ui/LineDivider.jsx'
@@ -76,6 +77,8 @@ function MarketingPage() {
       <AddOns />
       <LineDivider />
       <WhyAlpha />
+      <LineDivider />
+      <Testimonials />
       <LineDivider />
       <CTA />
       <Footer />
