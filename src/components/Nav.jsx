@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'Maintenance',  href: '#maintenance' },
   { label: 'Add-Ons',      href: '#addons' },
   { label: 'About',        href: '#why' },
-  { label: 'Reviews',      href: '#testimonials' },
+  { label: 'Testimonials', href: '#testimonials' },
 ]
 
 export function Nav() {
