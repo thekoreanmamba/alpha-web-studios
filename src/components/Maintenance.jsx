@@ -56,7 +56,7 @@ function PlanCard({ plan, delayIdx }) {
 
       <div className="flex-1" />
 
-      <Button href="#contact" variant={ctaVariant[plan.accentColor]} fullWidth>
+      <Button href="https://calendly.com/alphawebstudios-info/30min" variant={ctaVariant[plan.accentColor]} fullWidth target="_blank" rel="noopener noreferrer">
         {plan.cta}
         <ArrowIcon />
       </Button>

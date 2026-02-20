@@ -57,7 +57,7 @@ export function Nav() {
         </div>
 
         {/* CTA */}
-        <Button href="#contact" variant="primary" size="sm">
+        <Button href="https://calendly.com/alphawebstudios-info/30min" variant="primary" size="sm" target="_blank" rel="noopener noreferrer">
           Get a Free Quote
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
             <path d="M2 6.5h9M8 3l3 3.5-3 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

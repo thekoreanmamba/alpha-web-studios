@@ -71,7 +71,7 @@ export function Hero() {
               View Packages & Pricing
               <ArrowIcon />
             </Button>
-            <Button href="#contact" variant="ghost" size="lg">
+            <Button href="https://calendly.com/alphawebstudios-info/30min" variant="ghost" size="lg" target="_blank" rel="noopener noreferrer">
               Schedule a Free Consultation
             </Button>
           </div>

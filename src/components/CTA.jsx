@@ -32,11 +32,11 @@ export function CTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <Button href="mailto:info@alphawebstudios.com" variant="teal" size="lg">
+          <Button href="https://calendly.com/alphawebstudios-info/30min" variant="teal" size="lg" target="_blank" rel="noopener noreferrer">
             Get a Free Quote
             <ArrowIcon />
           </Button>
-          <Button href="mailto:info@alphawebstudios.com" variant="ghost" size="lg">
+          <Button href="https://calendly.com/alphawebstudios-info/30min" variant="ghost" size="lg" target="_blank" rel="noopener noreferrer">
             Schedule a Consultation
           </Button>
         </div>

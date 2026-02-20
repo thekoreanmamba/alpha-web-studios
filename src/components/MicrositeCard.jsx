@@ -138,7 +138,7 @@ export function MicrositeCard() {
               </div>
 
               {/* CTA */}
-              <Button href="#contact" variant="teal-soft" fullWidth>
+              <Button href="https://calendly.com/alphawebstudios-info/30min" variant="teal-soft" fullWidth target="_blank" rel="noopener noreferrer">
                 Request a Microsite
                 <ArrowIcon />
               </Button>

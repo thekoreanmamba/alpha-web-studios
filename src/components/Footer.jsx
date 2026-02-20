@@ -9,8 +9,8 @@ const SERVICE_LINKS = [
 const COMPANY_LINKS = [
   { label: 'About Us',             href: '#why' },
   { label: 'Industries Served',    href: '#services' },
-  { label: 'Contact',              href: '#contact' },
-  { label: 'Free Consultation',    href: '#contact' },
+  { label: 'Book a Consultation',  href: 'https://calendly.com/alphawebstudios-info/30min' },
+  { label: 'Free Consultation',    href: 'https://calendly.com/alphawebstudios-info/30min' },
 ]
 
 export function Footer() {

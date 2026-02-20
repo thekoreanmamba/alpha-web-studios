@@ -55,6 +55,8 @@ export function Button({
   href,
   onClick,
   fullWidth = false,
+  target,
+  rel,
 }) {
   const sizeClasses = {
     sm: 'px-4 py-2 text-[13px]',
@@ -73,7 +75,7 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={base}>
+      <a href={href} className={base} target={target} rel={rel}>
         {children}
       </a>
     )

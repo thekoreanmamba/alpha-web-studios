@@ -163,7 +163,7 @@ function TierCard({ tier }) {
       <div className="flex-1" />
 
       {/* Primary CTA */}
-      <Button href="#contact" variant={btnVariant} fullWidth>
+      <Button href="https://calendly.com/alphawebstudios-info/30min" variant={btnVariant} fullWidth target="_blank" rel="noopener noreferrer">
         {tier.cta}
         <ArrowIcon />
       </Button>
@@ -212,7 +212,7 @@ export function PricingTiers() {
         {/* Footnote */}
         <p className="text-center text-slate-500 text-sm mt-6 reveal">
           All packages include WordPress + Elementor builds with mobile-responsive design.{' '}
-          <a href="#contact" className="text-teal-400 hover:text-teal-300 transition-colors underline underline-offset-2">
+          <a href="https://calendly.com/alphawebstudios-info/30min" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 transition-colors underline underline-offset-2">
             Schedule a free consultation
           </a>{' '}
           to find the right fit.
